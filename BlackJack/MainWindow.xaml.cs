@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,44 +32,50 @@ namespace BlackJack
             var playerTurn = true;
             deck = DeckMethods.DeckAssembler();
             deck = DeckMethods.MultiShuffler(deck);
+            Welcome welcome = new Welcome();
 
-            InitGame();
+            welcome.ShowDialog();
+            player.Name = welcome.nameBox.Text;
+            PlayerTotal.Content = $"{player.Name} Total";
+            while(playerTurn == true)
+            {
+                var message = "Would you like to hit?";
+                var caption = "Player turn";
+                MessageBoxButton buttons = MessageBoxButton.YesNo;
 
-            //while (playerTurn)
-            //{
-            //    Stand.Click += new EventHandler(this.StandClick);
-            //}
-        }
+                var result = MessageBox.Show(message, caption, buttons);
+                if (result == MessageBoxResult.No)
+                {
+                    playerTurn = false;
+                }
 
-        private bool StandClick(object sender, EventArgs e)
-        {
-            Button clickedButton = (Button)sender;
-            clickedButton.IsEnabled = false;
-            Hit.IsEnabled = false;
-            return false;
-        }
+                player.Hit(deck);
+                
+            }
 
-        public bool InitGame()
-        {
-            var message = "Welcome to the Kirk Casino! We are currently cashless but looking" +
-                           "forward to playing Black Jack with you today! Would you like to play?";
-            var caption = "Let's Play BlackJack!";
-            MessageBoxButton button = MessageBoxButton.YesNo;
-            MessageBoxResult result;
+            
 
-            result = MessageBox.Show(message, caption, button);
-            if (result == MessageBoxResult.Yes)
-                return true;
-            else
-                Close();
-            return false;
-        }
-        
-        public void UpdateScore(Player player)
-        {
-            PlayerScore.Content = player.CardValue;
+           
         }
 
         
+        //public string InitGame()
+        //{
+        //    var message = "Welcome to the Kirk Casino! We are currently cashless but looking" +
+        //                   "forward to playing Black Jack with you today! Please enter your name:";
+        //    var caption = "Let's Play BlackJack!";
+            
+        //    MessageBoxResult result;
+
+        //    result = MessageBox
+            
+        //}
+        
+        //public void UpdateScore(Player player)
+        //{
+        //    PlayerScore.Content = player.CardValue;
+        //}
+
+       
     }
 }

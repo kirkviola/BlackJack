@@ -11,8 +11,6 @@
             <ImageBrush ImageSource="/BlackJackTable.jpg"/>
         </Grid.Background>
         <Label x:Name="TitleLabel" Content="Welcome to Casino Kirk!" HorizontalAlignment="Center" Margin="0,38,0,0" VerticalAlignment="Top" FontFamily="Trebuchet MS" FontSize="48" FontStyle="Italic" Foreground="#FFDB2424"/>
-        <Button x:Name="Hit" Content="Hit" HorizontalAlignment="Left" Margin="141,551,0,0" VerticalAlignment="Top" Height="41" Width="129" FontFamily="Arial" FontSize="16"/>
-        <Button x:Name="Stand" Content="Stand" HorizontalAlignment="Left" Margin="356,551,0,0" VerticalAlignment="Top" Height="41" Width="129" FontFamily="Arial" FontSize="16"/>
         <Image x:Name="PlayerCard" HorizontalAlignment="Left" Height="100" Margin="247,342,0,0" VerticalAlignment="Top" Width="100">
             <Image.OpacityMask>
                 <ImageBrush/>

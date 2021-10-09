@@ -9,11 +9,13 @@ namespace BlackJackLib
 {
     public class Player
     {
+        public string Name { get; set; }
         public Queue<Card> HandOfCards { get; set; }
         public int CardValue { get; set; } = 0;
         public System.Windows.Controls.Image myImage { get; set; }
 
-        public Player() { }
+        public Player() {
+        }
         public Player(int cardValue, System.Windows.Controls.Image myimage) 
         {
             this.CardValue = cardValue;
@@ -35,6 +37,7 @@ namespace BlackJackLib
 
         public void Hit(Queue<Card> deck)
         {
+            this.HandOfCards = new Queue<Card>();
             this.HandOfCards.Enqueue(deck.Dequeue());
             UpdateValue();
             UpdateImage(this.HandOfCards.Last());
