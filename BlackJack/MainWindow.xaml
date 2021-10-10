@@ -11,16 +11,16 @@
             <ImageBrush ImageSource="/BlackJackTable.jpg"/>
         </Grid.Background>
         <Label x:Name="TitleLabel" Content="Welcome to Casino Kirk!" HorizontalAlignment="Center" Margin="0,38,0,0" VerticalAlignment="Top" FontFamily="Trebuchet MS" FontSize="48" FontStyle="Italic" Foreground="#FFDB2424"/>
-        <Image x:Name="PlayerCard" HorizontalAlignment="Left" Height="100" Margin="247,342,0,0" VerticalAlignment="Top" Width="100">
-            <Image.OpacityMask>
-                <ImageBrush/>
-            </Image.OpacityMask>
-        </Image>
-        <Image x:Name="DealerCard" HorizontalAlignment="Left" Height="100" Margin="868,342,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image x:Name="DealerCard" HorizontalAlignment="Left" Height="100" Margin="868,342,0,0" VerticalAlignment="Top" Width="100" Stretch="Fill"/>
         <Label x:Name="PlayerTotal" Content="Player Total" HorizontalAlignment="Left" Margin="30,273,0,0" VerticalAlignment="Top" FontSize="24" Background="{x:Null}" Foreground="White"/>
         <Label x:Name="DealerTotal" Content="Dealer Total" HorizontalAlignment="Left" Margin="1031,273,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White"/>
         <Label x:Name="PlayerScore" Content="0" HorizontalAlignment="Left" Margin="30,342,0,0" VerticalAlignment="Top" Foreground="White" FontSize="28"/>
         <Label x:Name="DealerScore" Content="0" HorizontalAlignment="Left" Margin="1141,342,0,0" VerticalAlignment="Top" Foreground="White" FontSize="28"/>
+        <Image x:Name="PlayerCard" HorizontalAlignment="Left" Height="100" Margin="249,342,0,0" VerticalAlignment="Top" Width="100" Stretch="Fill">
+            <Image.OpacityMask>
+                <ImageBrush/>
+            </Image.OpacityMask>
+        </Image>
 
 
     </Grid>

@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BlackJackLib;
+
 
 namespace BlackJack
 {
@@ -26,8 +26,8 @@ namespace BlackJack
         {
             
             InitializeComponent();
-            var player = new Player(0, PlayerCard);
-            var dealer = new Dealer(0, DealerCard);
+            var player = new Player(0, PlayerCard, PlayerScore);
+            var dealer = new Dealer(0, DealerCard, DealerScore);
             var deck = new Queue<Card>();
             var playerTurn = true;
             deck = DeckMethods.DeckAssembler();
@@ -35,6 +35,7 @@ namespace BlackJack
             Welcome welcome = new Welcome();
 
             welcome.ShowDialog();
+            this.Show();
             player.Name = welcome.nameBox.Text;
             PlayerTotal.Content = $"{player.Name} Total";
             while(playerTurn == true)
