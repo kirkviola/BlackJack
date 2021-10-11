@@ -106,5 +106,15 @@ namespace BlackJack
             SecondShuffle = ShuffleDeck(FirstShuffle);
             return ThirdShuffle = ShuffleDeck(SecondShuffle);
         }
+        public static Queue<Card> Cut (Queue<Card> deck)
+        {
+            Random rand = new Random();
+            var index = rand.Next(24, 27);
+            for(int i = 1; i <= index; i++)
+            {
+                deck.Enqueue(deck.Dequeue());
+            }
+            return deck;
+        }
     }
 }

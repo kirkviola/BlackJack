@@ -34,6 +34,7 @@ namespace BlackJack
             var dealerDone = false;
             deck = DeckMethods.DeckAssembler();
             deck = DeckMethods.MultiShuffler(deck);
+            deck = DeckMethods.Cut(deck);
             Welcome welcome = new Welcome();
 
             welcome.ShowDialog();
