@@ -27,11 +27,11 @@ namespace BlackJackLib
             var done = true;
             while (done)
             {
-                isBusted();
-                if (!HitOrStand())
+                done = isBusted();
+                if (!HitOrStand() || done)
                     break;
 
-                this.Hit(deck);
+                done = this.Hit(deck);
             }
         }
     }

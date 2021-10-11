@@ -20,24 +20,17 @@ namespace BlackJack
         public Player(int cardValue, System.Windows.Controls.Image myimage,
                         System.Windows.Controls.Label myscore) 
         {
-
             this.CardValue = cardValue;
             this.myImage = myimage;
             this.myScore = myscore;
         }
 
-        public void UpdateImage(Card card)
-        {
-            Uri fileUri = new Uri(card.FilePath, UriKind.Relative);
-            this.myImage.Source = new BitmapImage(fileUri);
-                
-        }
+
 
         public bool Hit(Queue<Card> deck)
         {
             var busted = false;
             this.currentCard = deck.Dequeue();
-            UpdateImage(this.currentCard);
             busted = isBusted();
             return busted;
         }

@@ -6,21 +6,75 @@
         xmlns:local="clr-namespace:BlackJack"
         mc:Ignorable="d"
         Title="MainWindow" Height="675" Width="1200">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ImageSource x:Key="2Clubs">/Images/2_of_clubs.png</ImageSource>
+            <ImageSource x:Key="3Clubs">/Images/3_of_clubs.png</ImageSource>
+            <ImageSource x:Key="4Clubs">/Images/4_of_clubs.png</ImageSource>
+            <ImageSource x:Key="5Clubs">/Images/5_of_clubs.png</ImageSource>
+            <ImageSource x:Key="6Clubs">/Images/6_of_clubs.png</ImageSource>
+            <ImageSource x:Key="7Clubs">/Images/7_of_clubs.png</ImageSource>
+            <ImageSource x:Key="8Clubs">/Images/8_of_clubs.png</ImageSource>
+            <ImageSource x:Key="9Clubs">/Images/9_of_clubs.png</ImageSource>
+            <ImageSource x:Key="10Clubs">/Images/10_of_clubs.png</ImageSource>
+            <ImageSource x:Key="JackClubs">/Images/jack_of_clubs.png</ImageSource>
+            <ImageSource x:Key="QueenClubs">/Images/queen_of_clubs.png</ImageSource>
+            <ImageSource x:Key="KingClubs">/Images/king_of_clubs.png</ImageSource>
+            <ImageSource x:Key="AceClubs">/Images/ace_of_clubs.png</ImageSource>
+            <ImageSource x:Key="2Diamonds">/Images/2_of_diamonds.png</ImageSource>
+            <ImageSource x:Key="3Diamonds">/Images/3_of_diamonds.png</ImageSource>
+            <ImageSource x:Key="4Diamonds">/Images/4_of_diamonds.png</ImageSource>
+            <ImageSource x:Key="5Diamonds">/Images/5_of_diamonds.png</ImageSource>
+            <ImageSource x:Key="6Diamonds">/Images/6_of_diamonds.png</ImageSource>
+            <ImageSource x:Key="7Diamonds">/Images/7_of_diamonds.png</ImageSource>
+            <ImageSource x:Key="8Diamonds">/Images/8_of_diamonds.png</ImageSource>
+            <ImageSource x:Key="9Diamonds">/Images/9_of_diamonds.png</ImageSource>
+            <ImageSource x:Key="10Diamonds">/Images/10_of_diamonds.png</ImageSource>
+            <ImageSource x:Key="JackDiamonds">/Images/jack_of_diamonds.png</ImageSource>
+            <ImageSource x:Key="QueenDiamonds">/Images/queen_of_diamonds.png</ImageSource>
+            <ImageSource x:Key="KingDiamonds">/Images/king_of_diamonds.png</ImageSource>
+            <ImageSource x:Key="AceDiamonds">/Images/ace_of_diamonds.png</ImageSource>
+            <ImageSource x:Key="2Hearts">/Images/2_of_hearts.png</ImageSource>
+            <ImageSource x:Key="3Hearts">/Images/3_of_hearts.png</ImageSource>
+            <ImageSource x:Key="4Hearts">/Images/4_of_hearts.png</ImageSource>
+            <ImageSource x:Key="5Hearts">/Images/5_of_hearts.png</ImageSource>
+            <ImageSource x:Key="6Hearts">/Images/6_of_hearts.png</ImageSource>
+            <ImageSource x:Key="7Hearts">/Images/7_of_hearts.png</ImageSource>
+            <ImageSource x:Key="8Hearts">/Images/8_of_hearts.png</ImageSource>
+            <ImageSource x:Key="9Hearts">/Images/9_of_hearts.png</ImageSource>
+            <ImageSource x:Key="10Hearts">/Images/10_of_hearts.png</ImageSource>
+            <ImageSource x:Key="JackHearts">/Images/jack_of_hearts.png</ImageSource>
+            <ImageSource x:Key="QueenHearts">/Images/queen_of_hearts.png</ImageSource>
+            <ImageSource x:Key="KingHearts">/Images/king_of_hearts.png</ImageSource>
+            <ImageSource x:Key="AceHearts">/Images/ace_of_hearts.png</ImageSource>
+            <ImageSource x:Key="2Spades">/Images/2_of_spades.png</ImageSource>
+            <ImageSource x:Key="3Spades">/Images/3_of_spades.png</ImageSource>
+            <ImageSource x:Key="4Spades">/Images/4_of_spades.png</ImageSource>
+            <ImageSource x:Key="5Spades">/Images/5_of_spades.png</ImageSource>
+            <ImageSource x:Key="6Spades">/Images/6_of_spades.png</ImageSource>
+            <ImageSource x:Key="7Spades">/Images/7_of_spades.png</ImageSource>
+            <ImageSource x:Key="8Spades">/Images/8_of_spades.png</ImageSource>
+            <ImageSource x:Key="9Spades">/Images/9_of_spades.png</ImageSource>
+            <ImageSource x:Key="10Spades">/Images/10_of_spades.png</ImageSource>
+            <ImageSource x:Key="JackSpades">/Images/jack_of_spades.png</ImageSource>
+            <ImageSource x:Key="QueenSpades">/Images/queen_of_spades.png</ImageSource>
+            <ImageSource x:Key="KingSpades">/Images/king_of_spades.png</ImageSource>
+            <ImageSource x:Key="AceSpades">/Images/ace_of_spades.png</ImageSource>
+            <ImageSource x:Key="Joker">/Images/red_joker.png</ImageSource>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/BlackJackTable.jpg"/>
         </Grid.Background>
-        <Label x:Name="TitleLabel" Content="Welcome to Casino Kirk!" HorizontalAlignment="Center" Margin="0,38,0,0" VerticalAlignment="Top" FontFamily="Trebuchet MS" FontSize="48" FontStyle="Italic" Foreground="#FFDB2424"/>
-        <Image x:Name="DealerCard" HorizontalAlignment="Left" Height="100" Margin="868,342,0,0" VerticalAlignment="Top" Width="100" Stretch="Fill"/>
+        <Label x:Name="TitleLabel" Content="Welcome to Casino Kirk!" HorizontalAlignment="Center" Margin="0,38,0,0" VerticalAlignment="Top" FontFamily="Trebuchet MS" FontSize="48" FontStyle="Italic" Foreground="White"/>
+        <Image x:Name="DealerCard" HorizontalAlignment="Left" Height="199" Margin="811,243,0,0" VerticalAlignment="Top" Width="157" Stretch="Uniform"/>
         <Label x:Name="PlayerTotal" Content="Player Total" HorizontalAlignment="Left" Margin="30,273,0,0" VerticalAlignment="Top" FontSize="24" Background="{x:Null}" Foreground="White"/>
         <Label x:Name="DealerTotal" Content="Dealer Total" HorizontalAlignment="Left" Margin="1031,273,0,0" VerticalAlignment="Top" FontSize="24" Foreground="White"/>
         <Label x:Name="PlayerScore" Content="0" HorizontalAlignment="Left" Margin="30,342,0,0" VerticalAlignment="Top" Foreground="White" FontSize="28"/>
-        <Label x:Name="DealerScore" Content="0" HorizontalAlignment="Left" Margin="1141,342,0,0" VerticalAlignment="Top" Foreground="White" FontSize="28"/>
-        <Image x:Name="PlayerCard" HorizontalAlignment="Left" Height="100" Margin="249,342,0,0" VerticalAlignment="Top" Width="100" Stretch="Fill">
-            <Image.OpacityMask>
-                <ImageBrush/>
-            </Image.OpacityMask>
-        </Image>
+        <Label x:Name="DealerScore" Content="0" HorizontalAlignment="Right" Margin="0,342,34,0" VerticalAlignment="Top" Foreground="White" FontSize="28"/>
+        <Image x:Name="PlayerCard" HorizontalAlignment="Left" Height="199" Margin="249,243,0,0" VerticalAlignment="Top" Width="161" Stretch="Uniform"/>
+        <Label x:Name="Winner" Content="Label" HorizontalAlignment="Center" Margin="249,562,0,0" VerticalAlignment="Top" Height="46" Width="610" Foreground="White" FontFamily="Arial" FontSize="28" Visibility="Hidden"/>
 
 
     </Grid>

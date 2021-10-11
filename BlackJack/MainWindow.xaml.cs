@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,6 +31,7 @@ namespace BlackJack
             var dealer = new Dealer(0, DealerCard, DealerScore);
             var deck = new Queue<Card>();
             var playerTurn = true;
+            var dealerDone = false;
             deck = DeckMethods.DeckAssembler();
             deck = DeckMethods.MultiShuffler(deck);
             Welcome welcome = new Welcome();
@@ -48,14 +50,78 @@ namespace BlackJack
                 if (result == MessageBoxResult.No)
                 {
                     playerTurn = false;
+                    continue;
                 }
 
                 player.Hit(deck);
+                updateImage(player);
+                if (player.CardValue > 21)
+                {
+                    playerTurn = false;
+                    continue;
+                }
                 
+            }
+            
+            while (!dealerDone)
+            {
+                var toHit = dealer.HitOrStand();
+                if (!toHit)
+                {
+                    updateDealerImage(dealer);
+                    break;
+                }
+                dealer.Hit(deck);
+                updateDealerImage(dealer);
+            }
+            CheckWinner(player, dealer);
+
+            // Methods to update control objects
+            void updateImage(Player player)
+            {
+                PlayerCard.Source = (ImageSource)FindResource(player.currentCard.FilePath);
+            }
+            void updateDealerImage(Player dealer)
+            {
+                DealerCard.Source = (ImageSource)FindResource(dealer.currentCard.FilePath);
+            }
+            void CheckWinner(Player player, Player dealer)
+            {
+                if(player.CardValue > 21 && dealer.CardValue > 21)
+                {
+                    Winner.Content = "Both busted; no winner.";
+                    Winner.Visibility = Visibility.Visible;
+                }
+                else if(player.CardValue > 21)
+                {
+                    Winner.Content = $"Dealer is the winner!";
+                    Winner.Visibility = Visibility.Visible;
+                }
+                else if(dealer.CardValue > 21)
+                {
+                    Winner.Content = $"{player.Name} is the winner!";
+                    Winner.Visibility = Visibility.Visible;
+                }
+                else if(player.CardValue == dealer.CardValue)
+                {
+                    Winner.Content = "Player and dealer tied; no winner.";
+                    Winner.Visibility = Visibility.Visible;
+                }
+                else if(player.CardValue > dealer.CardValue)
+                {
+                    Winner.Content = $"{player.Name} is the winner!";
+                    Winner.Visibility = Visibility.Visible;
+                }
+                else if(player.CardValue < dealer.CardValue)
+                {
+                    Winner.Content = $"Dealer is the winner!";
+                    Winner.Visibility = Visibility.Visible;
+                }
+
             }
 
             
-
+           
            
         }
 
